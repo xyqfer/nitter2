@@ -110,10 +110,7 @@ proc renderVideo*(video: Video; prefs: Prefs; path: string): VNode =
               video(poster=thumb, controls=""):
                 source(src=source, `type`="video/mp4")
           of m3u8, vmap:
-            video(poster=thumb, data-url=source, data-autoload="false")
-            verbatim "<div class=\"video-overlay\" onclick=\"playVideo(this)\">"
-            tdiv(class="overlay-circle"): span(class="overlay-triangle")
-            verbatim "</div>"
+            video(poster=thumb, src=source, controls="", muted="", autoplay="")
       if container.len > 0:
         tdiv(class="card-content"):
           h2(class="card-title"): text video.title
