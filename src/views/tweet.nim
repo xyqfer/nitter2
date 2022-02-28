@@ -104,13 +104,13 @@ proc renderVideo*(video: Video; prefs: Prefs; path: string): VNode =
           case video.playbackType
           of mp4:
             if prefs.muteVideos:
-              video(poster=thumb, controls="", muted=""):
+              video(poster=thumb, controls="", muted="", autoplay="", playsinline=""):
                 source(src=source, `type`="video/mp4")
             else:
-              video(poster=thumb, controls=""):
+              video(poster=thumb, controls="", muted="", autoplay="", playsinline=""):
                 source(src=source, `type`="video/mp4")
           of m3u8, vmap:
-            video(poster=thumb, src=source, controls="", muted="", autoplay="")
+            video(poster=thumb, src=source, controls="", muted="", autoplay="", playsinline="")
       if container.len > 0:
         tdiv(class="card-content"):
           h2(class="card-title"): text video.title
