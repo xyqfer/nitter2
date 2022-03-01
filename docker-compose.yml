@@ -5,9 +5,11 @@ services:
   nitter:
     # image: zedeus/nitter:latest
     build: ./
+    networks:
+      - captain-overlay-network
     container_name: nitter
     ports:
-      - "8082:8080" # Replace with "8080:8080" if you don't use a reverse proxy
+      - "8081:8081" # Replace with "8080:8080" if you don't use a reverse proxy
     volumes:
       - ./nitter.conf:/src/nitter.conf:ro
     depends_on:
@@ -24,3 +26,7 @@ services:
 
 volumes:
   nitter-redis:
+
+networks:
+  captain-overlay-network:
+    external: true
