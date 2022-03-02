@@ -23,6 +23,8 @@ services:
     volumes:
       - nitter-redis:/data
     restart: unless-stopped
+    networks:
+      - captain-overlay-network
 
 volumes:
   nitter-redis:
