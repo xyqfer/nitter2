@@ -1,14 +1,14 @@
 @import '_variables';
 
 .gallery-row {
-    display: flex;
+    // display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     overflow: hidden;
     flex-grow: 1;
-    max-height: 379.5px;
-    max-width: 533px;
+    // max-height: 379.5px;
+    // max-width: 533px;
     pointer-events: all;
 
     .still-image {
@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-height: 600px;
+    // max-height: 600px;
     border-radius: 7px;
     overflow: hidden;
     flex-flow: column;
@@ -61,11 +61,12 @@
     justify-content: center;
 
     img {
-        object-fit: cover;
-        max-width: 100%;
-        max-height: 379.5px;
+        // object-fit: cover;
+        // max-width: 100%;
+        // max-height: 379.5px;
         flex-basis: 300px;
         flex-grow: 1;
+        width: 100%;
     }
 }
 
