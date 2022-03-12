@@ -66,9 +66,6 @@ proc renderHead*(prefs: Prefs; cfg: Config; req: Request; titleText=""; desc="";
     link(rel="search", type="application/opensearchdescription+xml", title=cfg.title,
                             href=opensearchUrl)
 
-    if canonical.len > 0:
-      link(rel="canonical", href=canonical)
-
     if cfg.enableRss and rss.len > 0:
       link(rel="alternate", type="application/rss+xml", href=rss, title="RSS feed")
 
@@ -130,7 +127,7 @@ proc renderMain*(body: VNode; req: Request; cfg: Config; prefs=defaultPrefs;
 
   let node = buildHtml(html(lang="en")):
     renderHead(prefs, cfg, req, titleText, desc, video, images, banner, ogTitle,
-               rss, canonical)
+               rss)
 
     body:
       renderNavbar(cfg, req, rss, canonical)
